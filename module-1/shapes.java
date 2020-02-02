@@ -66,9 +66,42 @@ public class shapes{
 
 	public static void main(String[] args){
 
+		if (args.length == 0){
+
+
+
 		triangle();
 		circle();
 		hourglass();
+
+		}//end no args if
+
+		else{
+
+			for (String s : args){
+
+				if (s.equals("circle")){
+
+					circle();
+				}//end circle if
+
+				else if (s.equals("triangle")){
+
+					triangle();
+				}//ed triangle if
+
+				else if (s.equals("hourglass")){
+
+					hourglass();
+				}//end hourglass if
+
+				else{
+
+					System.out.println("Sorry, I don't know that shape.");
+					System.out.println(" ");
+				}//else 
+			}//end args for loop
+		}//end args else
 	}//end of main
 
 
