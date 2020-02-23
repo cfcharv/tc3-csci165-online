@@ -1,3 +1,4 @@
+
 import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -46,6 +47,48 @@ class Drawer extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
 
         //<====> ADD YOUR DRAWING CODE HERE <==========>//
+        int x = 10, y = 10;
+        for (int i = 0; i < 30; ++i) {
+        	g2d.drawRect(x, y, 10, 10);
+        	y += 15;
+        }//end for loop
+        
+        //filled rectangles RGB (0,0,0) is black
+        y = 10; x += 15;
+        g2d.setColor(new Color(0,0,0));
+        
+        for (int i = 0; i < 30; ++i) {
+        	g2d.fillRect(x, y, 10, 10);
+        	y += 15;
+        }//end for loop
+        
+        //filled in grey ovals
+        g2d.setColor(new Color(200,200,200)); //set color grey
+        y = 10; x += 15;
+        
+        for(int i = 0; i < 30; ++i) {
+        	g2d.fillOval(x, y, 10, 10); 
+        	y += 15;
+        }//end for loop
+        
+        //adding a string to the window
+        int width = getWidth();//get window width
+        int height = getHeight();//get window height
+        g2d.setColor(Color.RED);//use a constant to change the color
+        String s = "I'm a graphics programmer now!!";
+        //roughly calclate the middle of the window
+        g2d.drawString(s, (width/2) - s.length() * 3,  (height/2));
+        
+        //random magenta tick marks -- 2000 of 'em
+        g2d.setColor(Color.MAGENTA);
+        Random random = new Random();
+        for (int i = 0; i < 2000; i++) {
+        	x = Math.abs(random.nextInt()) % width;
+        	y = Math.abs(random.nextInt()) % height;
+        	g2d.drawLine(x, y, x+2, y + 2);
+        	
+        }//end for loop
+        
 
        
     }
